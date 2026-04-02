@@ -129,7 +129,7 @@ namespace Analise.Controllers
             var viewModel = new EntradaViewModel
             {
                 EntradaNome = pedidoModel,
-                ListaEntradas = entradas.ToList()
+                ListaEntradas = entradas?.ToList() ?? new List<EntradaModel>()
             };
 
             return View(viewModel);

@@ -903,18 +903,17 @@
                 <li><a asp-controller="ContasPagar" asp-action="Criar">Contas a pagar</a></li>
             </ul>
         </li>
-
+        <li class="has-submenu">
+            <a href="javascript:void(0);" class="submenu-toggle">Saldos ▾</a>
+            <ul class="submenu" style="display:none; list-style:none; padding-left:15px;">
+                <li><a asp-controller="Conta" asp-action="Criar">Contas</a></li>
+                <li><a asp-controller="Linha" asp-action="Criar">Linhas</a></li>
+                <li><a asp-controller="Agencia" asp-action="Index">Tabernáculos</a></li>
+            </ul>
+        </li>
         @if (ViewBag.Perfil == Analise.Enuns.PerfilEnum.Admin)
         {
-            <li class="has-submenu">
-                <a href="javascript:void(0);" class="submenu-toggle">Saldos ▾</a>
-                <ul class="submenu" style="display:none; list-style:none; padding-left:15px;">
-                    <li><a asp-controller="Conta" asp-action="Criar">Contas</a></li>
-                    <li><a asp-controller="Linha" asp-action="Criar">Linhas</a></li>
-                    <li><a asp-controller="Agencia" asp-action="Index">Tabernáculos</a></li>
-                </ul>
-            </li>
-
+            
             <li class="has-submenu">
                 <a href="javascript:void(0);" class="submenu-toggle">Ajustes ▾</a>
                 <ul class="submenu" style="display:none; list-style:none; padding-left:15px;">

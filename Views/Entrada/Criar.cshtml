@@ -286,7 +286,7 @@
         padding: 6px 14px;
         border-radius: 10px;
         font-weight: 400;
-        border: 1px solid rgba(150,150,150);
+        border: 1px solid rgba(255,255,255,0.25);
         backdrop-filter: blur(6px);
         background: transparent;
         color: rgba(0,0,0);
@@ -316,7 +316,7 @@
         .selectbox:focus {
             outline: none;
             border: 1px solid #48c878;
-            box-shadow: 0 0 12px rgba(72,200,120,0.3);
+            box-shadow: 0 0 10px rgba(72,200,120,0.4);
         }
 </style>
 
@@ -461,15 +461,15 @@
                         <tbody>
                             @if (Model != null && Model.ListaEntradas.Any())
                             {
-                                foreach (EntradaModel cargo in Model.ListaEntradas)
+                                @foreach (var cargo in Model.ListaEntradas ?? new List<EntradaModel>())
                                 {
                                     <tr>
                                         <td>@cargo.Id</td>
-                                        <td>@cargo.Agencia.Nome</td>
-                                        <td>@cargo.TipoEntrada.Nome</td>
-                                        <td>@cargo.Cadastro.Nome</td>
+                                        <td>@cargo.Agencia?.Nome</td>
+                                        <td>@cargo.TipoEntrada?.Nome</td>
+                                        <td>@cargo.Cadastro?.Nome</td>
                                         <td>@cargo.Descricao</td>
-                                        <td>@cargo.Valor.ToString("N2")</td>
+                                        <td>@cargo.Valor</td>
                                         <td>@cargo.DataCadastro.ToString("dd/MM/yyyy")</td>
                                     </tr>
                                 }
